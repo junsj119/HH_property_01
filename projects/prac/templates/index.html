@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // function hey()
+        // {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/test?title_give=봄날은간다",  // /test라는 창구에 가는데 title_give로 봄날을 간다라는 것을 갖기ㅗ 갈게!
+        //         data: {},
+        //         success: function (response) {
+        //             console.log(response)          // 위에서 했던 요청이 잘 되면 내가 console에다가 찍어볼게
+        //         }
+        //     })
+        // }
+        function hey()
+        {
+            $.ajax({
+                type: "POST",
+                url: "/test",   // /test라는 창구에 요청
+                data: {title_give: '봄날은간다'},
+                success: function (response) {      //response에는    return jsonify({'result':'success', 'msg': '요청을 잘 받았어요!'}) 안에 값들이 들어간다
+                    console.log(response['msg'])    //요청을 잘받았어요! 만 출력
+                }
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <h1>나의 첫 웹페이지!</h1>
+    <button onclick = "hey()">버튼이에용</button>
+</body>
+</html>
